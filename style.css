@@ -12,8 +12,10 @@
   --radius: 10px;
 }
 
+/* Dark tokens apply when the system prefers dark (unless the visitor picked light),
+   or when the visitor picked dark with the header toggle. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bg: #141412;
     --surface: #1c1c19;
     --text: #ecebe6;
@@ -21,6 +23,32 @@
     --border: #2e2d29;
     --accent: #7cc4a0;
     --accent-contrast: #10201a;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #141412;
+  --surface: #1c1c19;
+  --text: #ecebe6;
+  --muted: #a19d93;
+  --border: #2e2d29;
+  --accent: #7cc4a0;
+  --accent-contrast: #10201a;
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+/* Fade colours while the theme switches; the class is only set briefly by the toggle,
+   so hovers and the first paint stay instant. */
+@media (prefers-reduced-motion: no-preference) {
+  .theme-transition,
+  .theme-transition *,
+  .theme-transition *::before,
+  .theme-transition *::after {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
   }
 }
 
@@ -87,7 +115,7 @@ h3 {
 .site-header .wrap {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 1rem;
   height: 3.5rem;
 }
 
@@ -101,6 +129,7 @@ h3 {
 .site-header nav {
   display: flex;
   gap: 1.25rem;
+  margin-left: auto;
 }
 
 .site-header nav a {
@@ -111,6 +140,44 @@ h3 {
 
 .site-header nav a:hover {
   color: var(--text);
+}
+
+.theme-toggle {
+  display: inline-grid;
+  place-items: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.theme-toggle[hidden] {
+  display: none;
+}
+
+.theme-toggle:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+.theme-toggle svg {
+  width: 1.05rem;
+  height: 1.05rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Show the icon of the theme a click switches to. */
+[data-theme="dark"] .theme-toggle .icon-moon,
+[data-theme="light"] .theme-toggle .icon-sun {
+  display: none;
 }
 
 /* Sections */
