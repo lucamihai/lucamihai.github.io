@@ -73,7 +73,7 @@
 
     <section id="about" class="wrap">
       <h2>About</h2>
-      <p>I'm a full stack developer based in Romania, working mainly with .NET on the backend and Angular on the frontend. I enjoy the whole path of building a product: designing the data model, writing the APIs, shaping the interface and keeping it running once real users show up.</p>
+      <p>I'm a full stack developer based in Romania with 8 years of experience, working mainly with .NET on the backend and Angular on the frontend. I enjoy the whole path of building a product: designing the data model, writing the APIs, shaping the interface and keeping it running once real users show up.</p>
       <p>Lately most of my time goes into <a href="https://www.saventa.app/" target="_blank" rel="noopener">Saventa</a>, a personal finance tracker I build and run end to end. It's where I get to care about the details: clear numbers, privacy and an experience that doesn't get in the way.</p>
       <p>I'm open to freelance and contract work, especially .NET and Angular web applications.</p>
     </section>
@@ -92,15 +92,62 @@
               <p class="project-kind">Investment &amp; net worth tracker</p>
             </div>
           </div>
-          <p>Track savings, deposits, shares, crypto, property and pensions in one place. Imports statements from 12 brokers and exchanges, explains every figure in plain language, and keeps data in the EU.</p>
+          <p>Track savings, deposits, shares, crypto, property and pensions in one place. Statements come in from 12 import sources, every figure is explained in plain language, and everything is EU-hosted.</p>
           <ul class="tags" aria-label="Highlights">
-            <li>12 broker imports</li>
+            <li>12 import sources</li>
             <li>26 languages</li>
             <li>EU-hosted · GDPR</li>
             <li>Free &amp; paid plans</li>
+            <li>Stripe billing</li>
+            <li>AI assistant</li>
+            <li>Azure · CI/CD</li>
           </ul>
           <p class="project-links">
             <a href="https://www.saventa.app/" target="_blank" rel="noopener">Visit saventa.app →</a>
+          </p>
+        </article>
+
+        <article class="project">
+          <a class="project-shot" href="https://www.saventa.app/pricing" target="_blank" rel="noopener">
+            <img src="assets/stripe-billing.png" width="1280" height="769" loading="lazy" alt="Saventa pricing page with a monthly and yearly toggle and the Free, Plus and Pro plans">
+          </a>
+          <div class="project-head">
+            <div>
+              <h3>Stripe billing</h3>
+              <p class="project-kind">Subscriptions in Saventa</p>
+            </div>
+          </div>
+          <p>Monthly and yearly plans through Stripe Checkout and the customer portal. A signed webhook keeps each customer's plan in sync, ignores duplicate events, and decides what the app lets them use.</p>
+          <ul class="tags" aria-label="Highlights">
+            <li>Stripe</li>
+            <li>ASP.NET Core</li>
+            <li>Webhooks</li>
+            <li>Plan-based access</li>
+          </ul>
+          <p class="project-links">
+            <a href="https://www.saventa.app/pricing" target="_blank" rel="noopener">See the plans →</a>
+          </p>
+        </article>
+
+        <article class="project">
+          <a class="project-shot" href="https://www.saventa.app/" target="_blank" rel="noopener">
+            <img src="assets/ai-assistant.png" width="1280" height="769" loading="lazy" alt="Saventa's assistant answering how much rent was collected this year, with a note about where the figure comes from">
+          </a>
+          <div class="project-head">
+            <div>
+              <h3>AI assistant</h3>
+              <p class="project-kind">Answers from your own data</p>
+            </div>
+          </div>
+          <p>An opt-in assistant that answers questions about the app and, if the user allows it, about their own portfolios. It reads data only through read-only tools, and flags any figure it can't trace back to that data.</p>
+          <ul class="tags" aria-label="Highlights">
+            <li>Anthropic API</li>
+            <li>Tool calling</li>
+            <li>C#</li>
+            <li>Opt-in &amp; privacy-minded</li>
+          </ul>
+          <p class="project-links">
+            <a href="https://www.saventa.app/" target="_blank" rel="noopener">See it in Saventa →</a>
           </p>
         </article>
       </div>
